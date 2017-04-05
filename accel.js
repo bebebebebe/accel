@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function ballUpd(beta, gamma) {
-    var x = Math.round(beta) + 90;
-    var y = Math.round(gamma) + 90;
+    var y = Math.round(beta) + 90;
+    var x = Math.round(gamma) + 90;
 
     var ballLeft = size.width * x/180 - 10;
     var ballTop = size.height * y/180 - 10;
