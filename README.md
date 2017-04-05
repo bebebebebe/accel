@@ -1,0 +1,2 @@
+Experimenting with accelerometer sensor. Deployed <a href='https://bebebebebe.github.io/accel/'>here</a> to try out on phone.
+Hold your phone face up, and a purple ball (circle) should be centered on the screen. Tilt your phone in different directions to make the ball "roll" around on the screen. Accelerometer readings (alpha, beta, gamma values) are printed in the top left.
