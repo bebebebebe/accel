@@ -8,7 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
   var planeEl = document.querySelector('#plane');
   var ballEl = document.querySelector('#ball');
 
+  var size = {
+    width: window.innerWidth || document.body.clientWidth,
+    height: window.innerHeight || document.body.clientHeight
+  };
+
+  init();
   wire();
+
+  function init() {
+    ballCenter();
+  }
 
   function wire() {
     window.addEventListener('deviceorientation', orientationH, true);
@@ -20,7 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var beta = e.beta;
     var gamma = e.gamma;
 
+    if (alpha === null && beta === null && gamma === null) return;
+
     dataUpd(absolute, alpha, beta, gamma);
+    ballUpd(beta, gamma);
   }
 
   function dataUpd(absolute, alpha, beta, gamma) {
@@ -28,5 +41,27 @@ document.addEventListener('DOMContentLoaded', function() {
     alphaEl.innerHTML = alpha;
     betaEl.innerHTML = beta;
     gammaEl.innerHTML = gamma;
+  }
+
+  function ballUpd(beta, gamma) {
+    var x = Math.round(beta) + 90;
+    var y = Math.round(gamma) + 90;
+
+    var ballLeft = size.width * x/180 - 10;
+    var ballTop = size.height * y/180 - 10;
+
+    ballMove(ballLeft, ballTop);
+  }
+
+  function ballMove(left, top) {
+    ball.style.left = left + 'px';
+    ball.style.top = top + 'px';
+  }
+
+  function ballCenter() {
+    var ballLeft = size.width/2 - 10;
+    var ballTop = size.height/2 - 10;
+
+    ballMove(ballLeft, ballTop);
   }
 });

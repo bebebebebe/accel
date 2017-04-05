@@ -1,3 +1,14 @@
 .info {
   font-family: monospace;
 }
+
+
+#ball {
+  border-radius: 100%;
+  background: purple;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 20px;
+  height: 20px;
+}
