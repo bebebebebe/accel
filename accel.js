@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var gammaEl = document.querySelector('#gamma');
   var absoluteEl = document.querySelector('#absolute');
 
+  var alphaGEl = document.querySelector('#lapha-gyronorm');
+  var betaGEl = document.querySelector('#beta-gyronorm');
+  var gammaGEl = document.querySelector('#gamma-gyronorm');
+
+  var compassEl = document.querySelector('#compass');
+
   var planeEl = document.querySelector('#plane');
   var ballEl = document.querySelector('#ball');
 
@@ -29,10 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var alpha = e.alpha;
     var beta = e.beta;
     var gamma = e.gamma;
+    var compass = e.webkitCompassHeading;
 
     if (alpha === null && beta === null && gamma === null) return;
 
-    dataUpd(absolute, alpha, beta, gamma);
+    dataUpd(absolute, alpha, beta, gamma, compass);
     ballUpd(beta, gamma);
   }
 
@@ -64,4 +71,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     ballMove(ballLeft, ballTop);
   }
+
 });
