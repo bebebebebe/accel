@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ballUpd(beta, gamma);
   }
 
-  function dataUpd(absolute, alpha, beta, gamma) {
+  function dataUpd(absolute, alpha, beta, gamma, compass) {
     absoluteEl.innerHTML = absolute;
     alphaEl.innerHTML = alpha;
     betaEl.innerHTML = beta;
